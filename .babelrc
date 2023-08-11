@@ -17,5 +17,18 @@
   ],
   "plugins": [
     "@babel/plugin-transform-runtime"
-  ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        ["console-source", {
+          "segments": 1,
+          "splitSegment": "/"
+        }]
+      ]
+    },
+    "production": {
+
+    }
+  }
 }

@@ -77,3 +77,22 @@ var Foo = /*#__PURE__*/function () {
 ```
 
 ## babel 进阶
+
+### 基于环境定义 Babel 配置
+
+有时候会对应不同的环境，如开发环境、生产环境等。需要配置不同的 `babel` 配置。`babel` 会根据 `process.env.BABEL_ENV` 的值对应不同的环境配置。默认是 development 环境
+
+```json
+{
+  "env": {
+    "development": {
+      "plugins": [
+        ["console-source", {
+          "segments": 1,
+          "splitSegment": "/"
+        }]
+      ]
+    }
+  }
+}
+```
